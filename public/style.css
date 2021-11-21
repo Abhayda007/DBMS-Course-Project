@@ -1,0 +1,155 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main {
+    background-color: whitesmoke;
+    background-size: cover;
+    background-position: center;
+    /*height: 100vh;*/
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.logo a {
+    text-decoration: none;
+    color: black;
+    font-family: "Shadows Into Light", cursive;
+    font-size: 32px;
+}
+
+.navbar {
+    display: flex;
+    background-color: lightgray ;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    width: 100%;
+    padding: 2vh;
+    box-shadow: 10px gray;
+    /*margin-top: 2vh;*/
+    /*background: linear-gradient(to right, #eeeeee9a 0%, #525050 100%);*/
+}
+
+.nav-links {
+    color: black;
+    display: flex;
+    justify-content: space-around;
+    /*width: 30%;*/
+}
+
+.nav-links li {
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    display: inline-block;
+    color: black;
+    /*font-family: "Shadows Into Light", cursive;*/
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: lighter;
+    font-size: 28px;
+    padding: 0 20px;
+}
+
+.nav-links a::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background: black;
+    transition: width 0.3s;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+    transition: width 0.3s;
+}
+
+/*-------------------------------*/
+.view_tables h1{
+    text-align: center;
+    margin: 10px;
+}
+
+/*-----------------------------------------------*/
+
+.dropdown_div {
+    
+    /*position: relative;
+    display: grid;
+    justify-content: center;
+    align-content: center;*/
+
+    position: relative;
+    display: inline-block;
+    margin-left: 45%;
+
+}
+.dropdown_button {
+    background-color: white; /* button background colour */
+    margin: auto;
+    color: black;
+    padding: 14px;
+    font-size: 16px;
+    border-style:solid;
+    border-radius:1em;
+    cursor: pointer;
+}
+.dropdown_content {
+    display: none; /* remove this to show all links before hovering */
+    position: absolute;
+    background-color: #f9f9f9; /* dropdown items - background colour */
+    /*width: 100%;*/ /* can remove this if you want to make the menu wider/narrower  */
+    /* min-width: 180px; can add this if you need to change the minimu width of menu */
+    box-shadow: 0px 6px 14px 0px rgba(0,0,0,0.3);
+    z-index: 1;
+}
+.dropdown_content a {
+    font-family:Arial;
+    color: #000000;
+    padding: 12px 18px;
+    text-decoration: none;
+    display: block; 
+       
+}
+.dropdown_content a:hover {
+    background-color: #eae9f7; /* dropdown items hover - change background colour */
+}
+.dropdown_div:hover .dropdown_content {
+    display: block;
+}
+.dropdown_div:hover .dropdown_button {
+    background-color: grey; /* button hover - change background colour */
+}
+/*---------------------------------------*/
+
+
+
+
+
+
+
+
+/*-----------------------------------------*/
+
+.table {
+    /*align-content: center;*/
+    margin: 2em;
+    
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-radius: 3px;
+    border-collapse: collapse;
+    padding: 5px;
+}

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Nerko+One&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="form_style.css">
+    <title>Udemy Database</title>
+</head>
+<body>
+    <div class = "main">
+        <!--Nav bar-->
+        <div>
+            <nav class="navbar">
+                <div class="logo">
+                    <h4><a href="/">Udemy Database</a></h4>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="/">View Tables</a></li>
+                    <li><a href="/create_course">Create a course</a></li>
+                    <li><a href="/search">Search by Category</a></li>
+                </ul>   
+            </nav>
+        </div>        
+    </div>
+    <div class = "form">
+        <form action = "/create_course" method="post">
+            <h2>COURSE INFO</h2>
+            <p>
+            <label for="ID">Course ID:</label>
+            <input type="text" id="Cid" name="Cid" required><br></p>
+            <p>
+            <label for="Title">Title:</label>
+            <input type="text" id="Ctitle" name="Ctitle" required><br></p>
+            <p>
+            <label for="URL">URL:</label>
+            <input type="text" id="url" name="url" required><br></p>
+            <p>
+            <label for="rating">Avg Rating:</label>
+            <input type="number" id="rating" name="rating"><br></p>
+            <p>
+            <label for="description">Description:</label>
+            <textarea rows="5" cols="30" id="description" name="description" placeholder="Enter description here"></textarea>
+            </p>
+            <p>
+            <label for="Create">CreatedOn:</label>
+            <input type="text" id="Create" name="Create"><br></p>
+            <p>
+            <label for="head">Headline:</label>
+            <input type="text" id="head" name="head"><br></p>
+            <p>
+            <label for="stud">No_of_students:</label>
+            <input type="number" id="stud" name="No_of_students" required><br></p>
+            <p>
+            <label for="lect">No_of_lectures:</label>
+            <input type="number" id="lect" name="No_of_lectures" required><br></p>
+            <p>
+            <label for="Cat_name">Category_name:</label>
+            <input type="text" id="Cat_name" name="Category_name" required><br></p>
+            <!--
+            <h2>FEATURES</h2>
+            <section class="other">
+            <input type="checkbox" id="sub" name="Subtitles" value="Subtitles" >
+            <label for="Subtitles">Subtitles</label><br>
+            <input type="checkbox" id="quiz" name="quiz" value="Quizzes">
+            <label for="Quizzes">Quizzes</label><br>
+            <input type="checkbox" id="codex" name="codex" value="Coding_Exercises">
+            <label for="Coding_Exercises">Coding_Exercises</label><br>
+            <input type="checkbox" id="test" name="test" value="Pratice_tests">
+            <label for="Pratice_tests">Pratice_tests</label><br>
+            </section>
+            <h2>LEVEL</h2>
+            <section class="other">
+            <input type="radio" id="all" name="all" value="Everything">
+            <label for="Everything">For all levels</label><br>
+            <input type="radio" id="one" name="beginner" value="Beginer">
+            <label for="Begineer">Begineer</label><br>
+            <input type="radio" id="two" name="intermediate" value="Intermediate">
+            <label for="Intermediate">Intermediate</label><br>
+            <input type="radio" id="three" name="expert" value="Expert">
+            <label for="Expert">Expert</label><br>
+            </section>
+    
+            <label for="ID">CourseID:</label>
+            <input type="text" id="Cid" name="Cid"><br>
+            <h2>LANGUAGE</h2>
+            <p>
+            <label for="Clang">Course_Lang:</label>
+            <input type="text" id="Clang" name="Clang" required><br></p>
+            <p>
+            
+            <label for="ID">CourseID:</label>
+            <input type="text" id="Cid" name="Cid"><br></p>
+            <h2>PRICE</h2>
+            <section class="other">
+            <input type="radio" id="paid" name="paid" value="IsPaid">
+            <label for="IsPaid">IsPaid</label><br>
+            </section>
+            <label for="cost">Cost:</label>
+            <input type="text" id="cost" name="cost" required><br>-->
+            <button class="button">Submit</button>
+        </form>
+    </div>
+
+</body>
+</html>

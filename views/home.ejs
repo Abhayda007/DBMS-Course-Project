@@ -1,0 +1,78 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Nerko+One&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type = "text/css" href="/style.css" />
+    <title>Udemy Database</title>
+</head>
+<body>
+    <div class="main_container">
+        <div class = "main">
+            <!--Nav bar-->
+            <div>
+                <nav class="navbar">
+                    <div class="logo">
+                        <h4><a href="/">Udemy Database</a></h4>
+                    </div>
+                    <ul class="nav-links">
+                        <li><a href="/">View Tables</a></li>
+                        <li><a href="/create_course">Create a course</a></li>
+                        <li><a href="/search">Search by Category</a></li>
+                    </ul>   
+                </nav>
+            </div>        
+        </div>
+
+        <div class="view_tables">
+            <h1> Select a table to view</h1>
+            
+            <div class="dropdown_div">
+                <button class="dropdown_button">Table Name</button>
+                <div class="dropdown_content">
+                <a href="http://localhost:3000/display/category/">Category</a>
+                <a href="http://localhost:3000/display/course/">Course</a>
+                <a href="http://localhost:3000/display/enrolls/">Enrolls</a>
+                <a href="http://localhost:3000/display/features/">Features</a>
+                <a href="http://localhost:3000/display/feedback/">Feedback</a>
+                <a href="http://localhost:3000/display/instructor/">Instructor</a>
+                <a href="http://localhost:3000/display/language/">Language</a>
+                <a href="http://localhost:3000/display/level/">Level</a>
+                <a href="http://localhost:3000/display/offers_course_in/">Offers_Course_In</a>
+                <a href="http://localhost:3000/display/price/">Price</a>
+                <a href="http://localhost:3000/display/student/">Student</a>
+                <a href="http://localhost:3000/display/taught_by/">Taught By</a>
+                <a href="http://localhost:3000/display/teaches/">Teaches</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="table">
+            <h2>Table Name : <%= tablename.toUpperCase() %></h2><br>
+            <table>
+                <tr>
+                    <% keys.forEach((key) => { %>
+                        <th><%= key %></th>
+                    <% }); %>
+                </tr>
+                    <% if (revs.length > 0) { %>
+                        <% revs.forEach(data => { %>
+                            <tr>
+                            <% keys.forEach ( key => { %>
+                                <td><%= data[key] %></td> 
+                            <% }); %>
+                            </tr> 
+                    <% }) %>
+            </table>
+                    <% } else { %>
+                        <p>There is no data to display...</p>
+                    <% } %>
+        </div>
+    </div>
+</body>
+</html>
