@@ -99,6 +99,65 @@ app.post("/create_course", (req, res) => {
     res.redirect("/")
 });
 
+app.get('/sort', (req, res) => {
+
+    try {
+        
+        res.sendFile('/public/sort.html', {root : __dirname});
+    } catch (error) {
+        console.log(error)
+    }
+})
+
+app.get('/sort/:Category', (req, res) => {
+
+    const category = req.params
+    const query = `select price.cost,course.title from price,course where price.courseid=course.courseid and course.category_name='${category.Category}' order by price.cost;`
+    try {
+        
+        pool.connect(async (error, client, release) => {
+            let resp = await client.query(query);
+            res.render('sort.ejs', {revs: resp.rows, keys: Object.keys(resp.rows[0]) });
+
+        })
+        
+
+    } catch (error) {
+        console.log(error)
+    }
+})
+
+app.get('/delete', (req, res) => {
+
+    try {
+        
+        res.sendFile('/public/delete.html', {root : __dirname});
+    } catch (error) {
+        console.log(error)
+    }
+})
+
+
+app.post('/delete', async(req, res) => {
+    
+    //console.log(req.body)
+    //console.log(req.body.search)
+    //const string = `select * from course where category_name = '${req.body.search}'`;
+    const string = `delete from course where course.title='${req.body.search}';`
+    try {
+        pool.connect(async (error, client, release) => {
+            let resp = await client.query(string);
+
+            res.render('delete.ejs');
+
+        })
+    } catch (error) {
+        console.log(error)
+    }
+    res.redirect("/");
+})
+
+
 
 app.use((req, res) => {
     res.send("404 page not found!!");

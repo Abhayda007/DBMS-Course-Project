@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Nerko+One&family=Shadows+Into+Light&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type = "text/css" href="/style.css">
+    <link rel="stylesheet" type = "text/css" href="/sort.css">
     <title>Udemy Database</title>
 </head>
 <body>
@@ -36,22 +36,36 @@
         <div class="dropdown_div">
             <button class="dropdown_button">Table Name</button>
             <div class="dropdown_content">
-                <a href="http://localhost:3000/display/category/">Category</a>
-                <a href="http://localhost:3000/display/course/">Course</a>
-                <a href="http://localhost:3000/display/enrolls/">Enrolls</a>
-                <a href="http://localhost:3000/display/features/">Features</a>
-                <a href="http://localhost:3000/display/feedback/">Feedback</a>
-                <a href="http://localhost:3000/display/instructor/">Instructor</a>
-                <a href="http://localhost:3000/display/language/">Language</a>
-                <a href="http://localhost:3000/display/level/">Level</a>
-                <a href="http://localhost:3000/display/offers_course_in/">Offers_Course_In</a>
-                <a href="http://localhost:3000/display/price/">Price</a>
-                <a href="http://localhost:3000/display/student/">Student</a>
-                <a href="http://localhost:3000/display/taught_by/">Taught By</a>
-                <a href="http://localhost:3000/display/teaches/">Teaches</a>
+                <a href="http://localhost:3000/sort/Development/">Development</a>
+                <a href="http://localhost:3000/sort/Economics/">Economics</a>
+                <a href="http://localhost:3000/sort/Music/">Music</a>
+                <a href="http://localhost:3000/sort/Design/">Design</a>
+                <a href="http://localhost:3000/sort/Business/">Business</a>
+                <a href="http://localhost:3000/sort/IT and Software/">IT and Software</a>
             </div>
           </div>
 
+    </div>
+
+    <div class="table">
+        <table>
+            <tr>
+                <% keys.forEach((key) => { %>
+                    <th><%= key %></th>
+                <% }); %>
+            </tr>
+                <% if (revs.length > 0) { %>
+                    <% revs.forEach(data => { %>
+                        <tr>
+                        <% keys.forEach ( key => { %>
+                            <td><%= data[key] %></td> 
+                        <% }); %>
+                        </tr> 
+                <% }) %>
+        </table>
+                <% } else { %>
+                    <p>There is no data to display...</p>
+                <% } %>
     </div>
     
 </body>
