@@ -85,7 +85,7 @@ app.post("/create_course", (req, res) => {
             (courseid, title, url, avg_rating, description, createdon, headline, no_of_students, no_of_lectures, category_name) 
             values ('${req.body.Cid}', '${req.body.Ctitle}','${req.body.url}' ,${req.body.rating} , '${req.body.description}', '${req.body.Create}', '${req.body.head}', ${req.body.No_of_students}, ${req.body.No_of_lectures}, '${req.body.Category_name}');` ;
 
-    //console.log(string)
+            
     
     try {
         pool.connect(async (error, client, release) => {
